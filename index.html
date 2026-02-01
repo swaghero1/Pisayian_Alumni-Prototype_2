@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PISAYIAN | PSHS International Alumni Foundation</title>
 
-    
     <link
       href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Montserrat:wght@400;500;700;800&family=Open+Sans:wght@400;600;700&display=swap"
       rel="stylesheet"
@@ -555,10 +554,13 @@
       }
 
       .cta-image {
-        background: url("picture_1.avif") center/cover no-repeat;
+        background: url("picture_1.avif") no-repeat;
         position: relative;
-        min-height: 100px; /* Ensure height on mobile */
+        background-position: right top; /* correct way */
+        background-size: 110%;
+        min-height: 100px;
       }
+
       .cta-overlay {
         position: absolute;
         inset: 0;
@@ -1255,4 +1257,3 @@
     </script>
   </body>
 </html>
-
