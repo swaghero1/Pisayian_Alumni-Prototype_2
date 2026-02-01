@@ -50,11 +50,7 @@
       }
 
       /* --- TYPOGRAPHY --- */
-      h1,
-      h2,
-      h3,
-      h4,
-      h5 {
+      h1, h2, h3, h4, h5 {
         font-family: "Merriweather", serif;
         color: var(--pisay-blue);
         font-weight: 700;
@@ -131,12 +127,13 @@
         font-size: 0.8rem;
         text-decoration: none;
         letter-spacing: 0.5px;
+        color: var(--pisay-blue);
       }
       .btn-link:hover {
         text-decoration: underline;
       }
 
-      /* --- HEADER STYLES (MATCHING INDEX3) --- */
+      /* --- HEADER STYLES --- */
       header {
         width: 100%;
         position: fixed;
@@ -167,26 +164,6 @@
       .logo img {
         height: 70px;
         width: auto;
-      }
-
-      .logo-text {
-        font-family: "Montserrat", sans-serif;
-        font-weight: 800;
-        font-size: 1.4rem;
-        color: var(--pisay-blue);
-        line-height: 1;
-        letter-spacing: normal;
-      }
-
-      .logo-text span {
-        display: block;
-        font-family: "Montserrat", sans-serif;
-        font-size: 0.55rem;
-        font-weight: 600;
-        color: var(--text-light);
-        text-transform: uppercase;
-        margin-top: 2px;
-        letter-spacing: normal;
       }
 
       .header-right {
@@ -281,7 +258,7 @@
 
       /* --- SECTION STYLES --- */
       section {
-        padding: 80px 0;
+        padding: 100px 0; /* More whitespace for academic feel */
       }
       .hero {
         padding: 0;
@@ -316,7 +293,6 @@
         align-items: center;
         padding: 20px 80px;
       }
-
       .about-image {
         width: 100%;
         aspect-ratio: 6 / 3;
@@ -325,7 +301,6 @@
         border-radius: 2px;
         overflow: hidden;
       }
-
       .about-image img {
         width: 100%;
         height: 100%;
@@ -421,15 +396,14 @@
         text-decoration: underline;
       }
 
-      /* --- UPDATED COMMUNITY / ALUMNI VOICES STYLES --- */
-
+      /* --- NEW ALUMNI PERSPECTIVES (JOURNAL STYLE) --- */
       .carousel-wrapper {
         display: flex;
         align-items: center;
         gap: 15px;
         position: relative;
+        overflow: hidden;
       }
-
       .carousel-track {
         display: flex;
         gap: 30px;
@@ -437,75 +411,72 @@
         scroll-behavior: smooth;
         padding: 10px 5px;
         scrollbar-width: none;
-        -ms-overflow-style: none;
         width: 100%;
       }
+      .carousel-track::-webkit-scrollbar { display: none; }
 
-      .carousel-track::-webkit-scrollbar {
-        display: none;
-      }
-
-      .spotlight-card {
-        text-align: center;
-        padding: 30px;
-        flex: 0 0 calc((100% - 60px) / 3);
+      .journal-card { 
+        background: white; 
+        padding: 50px; 
+        border: 1px solid var(--border-color); 
+        flex: 0 0 calc(50% - 15px); /* 2 cards visible */
         min-width: 0;
-        border: 1px solid var(--border-color);
-        border-radius: 2px;
-        background-color: white;
-        transition:
-          transform 0.2s ease,
-          border-color 0.2s;
       }
-
-      .spotlight-card:hover {
-        transform: translateY(-5px);
-        border-color: var(--pisay-blue);
+      .journal-quote-icon { 
+        font-size: 2rem; 
+        color: var(--pisay-light-blue); 
+        margin-bottom: 25px; 
       }
-
-      .spotlight-img {
-        width: 130px;
-        height: 130px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-bottom: 20px;
-      }
-
-      .spotlight-quote {
+      .journal-card p {
         font-family: "Merriweather", serif;
         font-style: italic;
-        font-size: 1.05rem;
+        font-size: 1.1rem;
+        line-height: 1.8;
         color: var(--text-dark);
-        margin-bottom: 15px;
-        line-height: 1.6;
+        margin-bottom: 30px;
       }
-
-      .spotlight-name {
-        font-weight: 700;
-        color: var(--pisay-blue);
-        display: block;
-        font-family: "Open Sans", sans-serif;
-        font-size: 0.85rem;
+      .journal-author { 
+        display: flex; 
+        align-items: center; 
+        gap: 15px; 
+        border-top: 1px solid #eee;
+        padding-top: 20px;
+      }
+      .journal-author img { 
+        width: 50px; 
+        height: 50px; 
+        border-radius: 50%; 
+        object-fit: cover;
+      }
+      .author-name { 
+        display: block; 
+        font-weight: 700; 
+        color: var(--pisay-blue); 
+        font-size: 0.9rem;
         text-transform: uppercase;
-        letter-spacing: 0.5px;
       }
-
-      .carousel-btn {
-        background-color: transparent;
+      .author-meta { 
+        font-size: 0.8rem; 
+        color: var(--text-light); 
+      }
+      .carousel-controls {
+        display: flex;
+        gap: 10px;
+      }
+      .control-btn {
+        width: 40px;
+        height: 40px;
         border: 1px solid var(--border-color);
-        color: var(--pisay-blue);
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
+        background: white;
+        cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
-        cursor: pointer;
-        transition: all 0.2s;
-        flex-shrink: 0;
+        color: var(--pisay-blue);
+        transition: 0.2s;
       }
-      .carousel-btn:hover {
-        background-color: var(--pisay-blue);
+      .control-btn:hover {
+        background: var(--pisay-blue);
         color: white;
       }
 
@@ -549,21 +520,34 @@
         color: var(--text-dark);
       }
 
-      /* --- CTA BANNER --- */
+      /* --- NEW CTA SECTION (SPLIT LAYOUT) --- */
       .cta-section {
-        background-color: var(--pisay-blue);
-        color: white;
-        text-align: center;
-        padding: 80px 0;
+        background-color: var(--pisay-dark-blue);
+        padding: 0;
       }
-      .cta-section h2 {
-        color: white;
-        margin-bottom: 15px;
+      .cta-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 400px;
       }
-      .cta-section p {
-        max-width: 600px;
-        margin: 0 auto 30px;
-        color: rgba(255, 255, 255, 0.9);
+      .cta-content {
+        padding: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .cta-content h2 { color: white; margin-bottom: 20px; font-family: "Merriweather", serif; }
+      .cta-content p { color: rgba(255,255,255,0.85); font-size: 1.1rem; margin-bottom: 35px; }
+      
+      .cta-image {
+        background: url('hero-reunion2.jpg') center/cover no-repeat;
+        position: relative;
+        min-height: 300px; /* Ensure height on mobile */
+      }
+      .cta-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 56, 168, 0.3); /* Blue tint */
       }
 
       /* --- FOOTER --- */
@@ -575,7 +559,7 @@
       }
       .footer-grid {
         display: grid;
-        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
         gap: 50px;
         margin-bottom: 40px;
       }
@@ -667,9 +651,14 @@
           gap: 15px;
           text-align: center;
         }
-        .spotlight-card {
-          flex: 0 0 calc((100% - 30px) / 2);
-        }
+        
+        /* Updates for Journal Cards Responsive */
+        .journal-card { flex: 0 0 100%; }
+        
+        /* Updates for CTA Responsive */
+        .cta-split { grid-template-columns: 1fr; }
+        .cta-content { padding: 60px 30px; text-align: center; }
+        .cta-content div { justify-content: center; }
       }
 
       @media (max-width: 768px) {
@@ -685,12 +674,6 @@
         .carousel-track {
           width: 100%;
         }
-        .carousel-btn {
-          display: none;
-        }
-        .spotlight-card {
-          flex: 0 0 100%;
-        }
       }
     </style>
   </head>
@@ -698,11 +681,8 @@
     <header>
       <div class="container">
         <a href="#" class="logo">
-          <img src="pisayian-logo.png" alt="Pisayian Logo" />
-          <div class="logo-text">
-            PISAYIAN
-            <span>PSHS International Alumni Foundation</span>
-          </div>
+          <img src="logo.png" alt="Pisayian Logo" />
+          <img src="text-logo.png" alt="" style="height: 2.5rem" />
         </a>
 
         <div class="header-right">
@@ -908,75 +888,69 @@
         </div>
       </section>
 
-      <section id="community">
+      <section id="community" style="border-top: 1px solid var(--border-color);">
         <div class="container">
-          <h2 class="section-title">Alumni Voices</h2>
-          <div class="divider"></div>
+          <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px;">
+            <div>
+              <h2 class="section-title" style="margin-bottom: 10px; text-align: left;">Alumni Perspectives</h2>
+              <div class="divider" style="margin: 0;"></div>
+            </div>
+            <div class="carousel-controls">
+              <button class="control-btn" id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
+              <button class="control-btn" id="nextBtn"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+          </div>
 
           <div class="carousel-wrapper">
-            <button class="carousel-btn" id="prevBtn">
-              <i class="fa-solid fa-chevron-left"></i>
-            </button>
-
             <div class="carousel-track" id="carouselTrack">
-              <div class="spotlight-card">
-                <img alt="Alumni" class="spotlight-img random-avatar" />
-                <p class="spotlight-quote">
-                  "The rigorous training at PSHS prepared me for the challenges
-                  of leading global tech initiatives. Giving back is not just an
-                  option, it's a duty."
-                </p>
-                <span class="spotlight-name"
-                  >Dr. Maria Santos, Class of '95</span
-                >
+              <div class="journal-card">
+                <i class="fa-solid fa-quote-left journal-quote-icon"></i>
+                <p>"The rigorous training at PSHS prepared me for the challenges of leading global tech initiatives. Giving back to this institution is not an option; it is a professional duty."</p>
+                <div class="journal-author">
+                  <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dr. Maria Santos">
+                  <div>
+                    <span class="author-name">Dr. Maria Santos</span>
+                    <span class="author-meta">Class of 1995 • Senior Research Lead</span>
+                  </div>
+                </div>
               </div>
 
-              <div class="spotlight-card">
-                <img alt="Alumni" class="spotlight-img random-avatar" />
-                <p class="spotlight-quote">
-                  "Pisayian provided the network I needed when I first moved to
-                  the US. Now, I mentor three younger alumni through the Pisay
-                  Network."
-                </p>
-                <span class="spotlight-name"
-                  >Engr. Juan Dela Cruz, Class of '08</span
-                >
+              <div class="journal-card">
+                <i class="fa-solid fa-quote-left journal-quote-icon"></i>
+                <p>"The Foundation provided the critical network required during my transition to North American academia. The mentorship program is world-class."</p>
+                <div class="journal-author">
+                  <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Engr. Juan Dela Cruz">
+                  <div>
+                    <span class="author-name">Engr. Juan Dela Cruz</span>
+                    <span class="author-meta">Class of 2008 • Aerospace Engineer</span>
+                  </div>
+                </div>
               </div>
 
-              <div class="spotlight-card">
-                <img alt="Alumni" class="spotlight-img random-avatar" />
-                <p class="spotlight-quote">
-                  "Supporting the Olympiad teams brings me so much joy. Seeing
-                  our students win gold on the international stage is
-                  priceless."
-                </p>
-                <span class="spotlight-name"
-                  >Atty. Sarah Lim, Class of '01</span
-                >
+              <div class="journal-card">
+                <i class="fa-solid fa-quote-left journal-quote-icon"></i>
+                <p>"Seeing our students win gold on the international stage is priceless. The support from the Foundation makes these victories possible."</p>
+                <div class="journal-author">
+                  <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Atty. Sarah Lim">
+                  <div>
+                    <span class="author-name">Atty. Sarah Lim</span>
+                    <span class="author-meta">Class of 2001 • Corporate Counsel</span>
+                  </div>
+                </div>
               </div>
 
-              <div class="spotlight-card">
-                <img alt="Alumni" class="spotlight-img random-avatar" />
-                <p class="spotlight-quote">
-                  "The foundation's grants allowed my research lab to upgrade
-                  equipment, fostering better education for current students."
-                </p>
-                <span class="spotlight-name">Dr. Alex Reyes, Class of '89</span>
-              </div>
-
-              <div class="spotlight-card">
-                <img alt="Alumni" class="spotlight-img random-avatar" />
-                <p class="spotlight-quote">
-                  "Reconnecting with my batchmates through the annual gala
-                  reminded me of the strength of our shared history."
-                </p>
-                <span class="spotlight-name">Miguel Tan, Class of '12</span>
+              <div class="journal-card">
+                <i class="fa-solid fa-quote-left journal-quote-icon"></i>
+                <p>"The grants allowed my laboratory to upgrade essential equipment, directly fostering better education for current scholars."</p>
+                <div class="journal-author">
+                  <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Dr. Alex Reyes">
+                  <div>
+                    <span class="author-name">Dr. Alex Reyes</span>
+                    <span class="author-meta">Class of 1989 • University Professor</span>
+                  </div>
+                </div>
               </div>
             </div>
-
-            <button class="carousel-btn" id="nextBtn">
-              <i class="fa-solid fa-chevron-right"></i>
-            </button>
           </div>
         </div>
       </section>
@@ -1054,17 +1028,17 @@
       </section>
 
       <section class="cta-section">
-        <div class="container">
-          <h2>Join the Pisayian Community</h2>
-          <p>
-            Connect with fellow alumni, support the next generation of scholars,
-            and make a lasting impact.
-          </p>
-          <div>
-            <a href="#" class="btn btn-white">Become a Member</a>
-            <a href="#" class="btn btn-gold" style="margin-left: 10px"
-              >Donate Now</a
-            >
+        <div class="cta-split">
+          <div class="cta-content">
+            <h2>Advance the Mission</h2>
+            <p>Your contributions directly fund high-impact STEM programs, research grants, and scholarships for the next generation of global leaders.</p>
+            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+              <a href="#" class="btn btn-gold">Make a Contribution</a>
+              <a href="#" class="btn btn-white">Formal Membership</a>
+            </div>
+          </div>
+          <div class="cta-image">
+            <div class="cta-overlay"></div>
           </div>
         </div>
       </section>
@@ -1074,12 +1048,13 @@
       <div class="container">
         <div class="footer-grid">
           <div class="footer-brand">
-            <h3>PISAYIAN FOUNDATION</h3>
+            <a href="#" class="logo" style="margin-bottom: 15px; display: flex; flex-direction: column; gap: 0;">
+              <img src="logo.png" alt="Logo" style="height: 100px" />
+              <img src="text-white.png" alt="" style="height: 30px">
+            </a>
             <p>
-              The Philippine Science High School International Alumni
-              Foundation, Inc. is a registered 501(c)(3) nonprofit organization
-              dedicated to supporting the PSHS System and its alumni community
-              in North America.
+              Dedicated to advancing STEM education and creating a legacy of
+              service for the next generation of Filipino scholars.
             </p>
             <div style="margin-top: 20px">
               <a
@@ -1112,6 +1087,15 @@
           </div>
 
           <div class="footer-col">
+            <h4>Get Involved</h4>
+            <ul class="footer-links">
+              <li><a href="#join">Become a Member</a></li>
+              <li><a href="#volunteer">Volunteer</a></li>
+              <li><a href="#network">Pisay Network</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
             <h4>Contact Us</h4>
             <ul class="footer-links">
               <li>
@@ -1127,6 +1111,10 @@
                   style="margin-right: 8px; width: 15px"
                 ></i>
                 1234 Alumni Way<br />San Francisco, CA 94103
+              </li>
+              <li>
+                <i class="fas fa-phone" ></i>
+                <span>+1 (555) 123-4567</span>
               </li>
             </ul>
           </div>
@@ -1160,7 +1148,7 @@
 
       // Function to get dynamic scroll width
       function getScrollAmount() {
-        const card = track.querySelector(".spotlight-card");
+        const card = track.querySelector(".journal-card");
         const gap = 30; // Matches the CSS gap
         return card.getBoundingClientRect().width + gap;
       }
@@ -1171,13 +1159,6 @@
 
       prevBtn.addEventListener("click", () => {
         track.scrollBy({ left: -getScrollAmount(), behavior: "smooth" });
-      });
-    </script>
-    <script>
-      document.querySelectorAll(".random-avatar").forEach((img) => {
-        const gender = Math.random() > 0.5 ? "men" : "women";
-        const number = Math.floor(Math.random() * 100);
-        img.src = `https://randomuser.me/api/portraits/${gender}/${number}.jpg`;
       });
     </script>
   </body>
