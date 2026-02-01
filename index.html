@@ -50,7 +50,11 @@
       }
 
       /* --- TYPOGRAPHY --- */
-      h1, h2, h3, h4, h5 {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
         font-family: "Merriweather", serif;
         color: var(--pisay-blue);
         font-weight: 700;
@@ -413,19 +417,21 @@
         scrollbar-width: none;
         width: 100%;
       }
-      .carousel-track::-webkit-scrollbar { display: none; }
+      .carousel-track::-webkit-scrollbar {
+        display: none;
+      }
 
-      .journal-card { 
-        background: white; 
-        padding: 50px; 
-        border: 1px solid var(--border-color); 
+      .journal-card {
+        background: white;
+        padding: 50px;
+        border: 1px solid var(--border-color);
         flex: 0 0 calc(50% - 15px); /* 2 cards visible */
         min-width: 0;
       }
-      .journal-quote-icon { 
-        font-size: 2rem; 
-        color: var(--pisay-light-blue); 
-        margin-bottom: 25px; 
+      .journal-quote-icon {
+        font-size: 2rem;
+        color: var(--pisay-light-blue);
+        margin-bottom: 25px;
       }
       .journal-card p {
         font-family: "Merriweather", serif;
@@ -435,29 +441,29 @@
         color: var(--text-dark);
         margin-bottom: 30px;
       }
-      .journal-author { 
-        display: flex; 
-        align-items: center; 
-        gap: 15px; 
+      .journal-author {
+        display: flex;
+        align-items: center;
+        gap: 15px;
         border-top: 1px solid #eee;
         padding-top: 20px;
       }
-      .journal-author img { 
-        width: 50px; 
-        height: 50px; 
-        border-radius: 50%; 
+      .journal-author img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
         object-fit: cover;
       }
-      .author-name { 
-        display: block; 
-        font-weight: 700; 
-        color: var(--pisay-blue); 
+      .author-name {
+        display: block;
+        font-weight: 700;
+        color: var(--pisay-blue);
         font-size: 0.9rem;
         text-transform: uppercase;
       }
-      .author-meta { 
-        font-size: 0.8rem; 
-        color: var(--text-light); 
+      .author-meta {
+        font-size: 0.8rem;
+        color: var(--text-light);
       }
       .carousel-controls {
         display: flex;
@@ -536,13 +542,21 @@
         flex-direction: column;
         justify-content: center;
       }
-      .cta-content h2 { color: white; margin-bottom: 20px; font-family: "Merriweather", serif; }
-      .cta-content p { color: rgba(255,255,255,0.85); font-size: 1.1rem; margin-bottom: 35px; }
-      
+      .cta-content h2 {
+        color: white;
+        margin-bottom: 20px;
+        font-family: "Merriweather", serif;
+      }
+      .cta-content p {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 1.1rem;
+        margin-bottom: 35px;
+      }
+
       .cta-image {
-        background: url('hero-reunion2.jpg') center/cover no-repeat;
+        background: url("hero-reunion2.jpg") center/cover no-repeat;
         position: relative;
-        min-height: 300px; /* Ensure height on mobile */
+        min-height: 100px; /* Ensure height on mobile */
       }
       .cta-overlay {
         position: absolute;
@@ -623,8 +637,11 @@
           order: 2;
         }
         .hero-reunion-real {
-          height: 350px;
+          height: 50px;
           order: 1;
+          object-fit: cover;
+          object-position: 15% center;
+          transform: scale(1.2);
         }
         .about-container {
           grid-template-columns: 1fr;
@@ -651,14 +668,23 @@
           gap: 15px;
           text-align: center;
         }
-        
+
         /* Updates for Journal Cards Responsive */
-        .journal-card { flex: 0 0 100%; }
-        
+        .journal-card {
+          flex: 0 0 100%;
+        }
+
         /* Updates for CTA Responsive */
-        .cta-split { grid-template-columns: 1fr; }
-        .cta-content { padding: 60px 30px; text-align: center; }
-        .cta-content div { justify-content: center; }
+        .cta-split {
+          grid-template-columns: 1fr;
+        }
+        .cta-content {
+          padding: 60px 30px;
+          text-align: center;
+        }
+        .cta-content div {
+          justify-content: center;
+        }
       }
 
       @media (max-width: 768px) {
@@ -888,16 +914,32 @@
         </div>
       </section>
 
-      <section id="community" style="border-top: 1px solid var(--border-color);">
+      <section id="community" style="border-top: 1px solid var(--border-color)">
         <div class="container">
-          <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px;">
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-end;
+              margin-bottom: 40px;
+            "
+          >
             <div>
-              <h2 class="section-title" style="margin-bottom: 10px; text-align: left;">Alumni Perspectives</h2>
-              <div class="divider" style="margin: 0;"></div>
+              <h2
+                class="section-title"
+                style="margin-bottom: 10px; text-align: left"
+              >
+                Alumni Perspectives
+              </h2>
+              <div class="divider" style="margin: 0"></div>
             </div>
             <div class="carousel-controls">
-              <button class="control-btn" id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
-              <button class="control-btn" id="nextBtn"><i class="fa-solid fa-chevron-right"></i></button>
+              <button class="control-btn" id="prevBtn">
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+              <button class="control-btn" id="nextBtn">
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
             </div>
           </div>
 
@@ -905,48 +947,84 @@
             <div class="carousel-track" id="carouselTrack">
               <div class="journal-card">
                 <i class="fa-solid fa-quote-left journal-quote-icon"></i>
-                <p>"The rigorous training at PSHS prepared me for the challenges of leading global tech initiatives. Giving back to this institution is not an option; it is a professional duty."</p>
+                <p>
+                  "The rigorous training at PSHS prepared me for the challenges
+                  of leading global tech initiatives. Giving back to this
+                  institution is not an option; it is a professional duty."
+                </p>
                 <div class="journal-author">
-                  <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dr. Maria Santos">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/44.jpg"
+                    alt="Dr. Maria Santos"
+                  />
                   <div>
                     <span class="author-name">Dr. Maria Santos</span>
-                    <span class="author-meta">Class of 1995 • Senior Research Lead</span>
+                    <span class="author-meta"
+                      >Class of 1995 • Senior Research Lead</span
+                    >
                   </div>
                 </div>
               </div>
 
               <div class="journal-card">
                 <i class="fa-solid fa-quote-left journal-quote-icon"></i>
-                <p>"The Foundation provided the critical network required during my transition to North American academia. The mentorship program is world-class."</p>
+                <p>
+                  "The Foundation provided the critical network required during
+                  my transition to North American academia. The mentorship
+                  program is world-class."
+                </p>
                 <div class="journal-author">
-                  <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Engr. Juan Dela Cruz">
+                  <img
+                    src="https://randomuser.me/api/portraits/men/32.jpg"
+                    alt="Engr. Juan Dela Cruz"
+                  />
                   <div>
                     <span class="author-name">Engr. Juan Dela Cruz</span>
-                    <span class="author-meta">Class of 2008 • Aerospace Engineer</span>
+                    <span class="author-meta"
+                      >Class of 2008 • Aerospace Engineer</span
+                    >
                   </div>
                 </div>
               </div>
 
               <div class="journal-card">
                 <i class="fa-solid fa-quote-left journal-quote-icon"></i>
-                <p>"Seeing our students win gold on the international stage is priceless. The support from the Foundation makes these victories possible."</p>
+                <p>
+                  "Seeing our students win gold on the international stage is
+                  priceless. The support from the Foundation makes these
+                  victories possible."
+                </p>
                 <div class="journal-author">
-                  <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Atty. Sarah Lim">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/68.jpg"
+                    alt="Atty. Sarah Lim"
+                  />
                   <div>
                     <span class="author-name">Atty. Sarah Lim</span>
-                    <span class="author-meta">Class of 2001 • Corporate Counsel</span>
+                    <span class="author-meta"
+                      >Class of 2001 • Corporate Counsel</span
+                    >
                   </div>
                 </div>
               </div>
 
               <div class="journal-card">
                 <i class="fa-solid fa-quote-left journal-quote-icon"></i>
-                <p>"The grants allowed my laboratory to upgrade essential equipment, directly fostering better education for current scholars."</p>
+                <p>
+                  "The grants allowed my laboratory to upgrade essential
+                  equipment, directly fostering better education for current
+                  scholars."
+                </p>
                 <div class="journal-author">
-                  <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Dr. Alex Reyes">
+                  <img
+                    src="https://randomuser.me/api/portraits/men/85.jpg"
+                    alt="Dr. Alex Reyes"
+                  />
                   <div>
                     <span class="author-name">Dr. Alex Reyes</span>
-                    <span class="author-meta">Class of 1989 • University Professor</span>
+                    <span class="author-meta"
+                      >Class of 1989 • University Professor</span
+                    >
                   </div>
                 </div>
               </div>
@@ -1031,8 +1109,12 @@
         <div class="cta-split">
           <div class="cta-content">
             <h2>Advance the Mission</h2>
-            <p>Your contributions directly fund high-impact STEM programs, research grants, and scholarships for the next generation of global leaders.</p>
-            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+            <p>
+              Your contributions directly fund high-impact STEM programs,
+              research grants, and scholarships for the next generation of
+              global leaders.
+            </p>
+            <div style="display: flex; gap: 15px; flex-wrap: wrap">
               <a href="#" class="btn btn-gold">Make a Contribution</a>
               <a href="#" class="btn btn-white">Formal Membership</a>
             </div>
@@ -1048,9 +1130,18 @@
       <div class="container">
         <div class="footer-grid">
           <div class="footer-brand">
-            <a href="#" class="logo" style="margin-bottom: 15px; display: flex; flex-direction: column; gap: 0;">
+            <a
+              href="#"
+              class="logo"
+              style="
+                margin-bottom: 15px;
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+              "
+            >
               <img src="logo.png" alt="Logo" style="height: 100px" />
-              <img src="text-white.png" alt="" style="height: 30px">
+              <img src="text-white.png" alt="" style="height: 30px" />
             </a>
             <p>
               Dedicated to advancing STEM education and creating a legacy of
@@ -1113,7 +1204,7 @@
                 1234 Alumni Way<br />San Francisco, CA 94103
               </li>
               <li>
-                <i class="fas fa-phone" ></i>
+                <i class="fas fa-phone"></i>
                 <span>+1 (555) 123-4567</span>
               </li>
             </ul>
